@@ -1,0 +1,35 @@
+version: "3.3"
+
+volumes:
+  palace-gems-data:
+    driver: local
+  palace-postgres-data:
+    driver: local
+
+services:
+  base: &base
+    env_file: .env.docker
+    image: palace:1
+    build: .
+    volumes:
+      - palace-gems-data:/home/.gems
+      - .:/home/app
+    depends_on:
+      - db
+
+  db:
+    hostname: db
+    image: postgres:12.2-alpine
+    environment:
+      POSTGRES_USER: cotoco
+      POSTGRES_PASSWORD: cotocosclub1234
+    volumes:
+      - palace-postgres-data:/var/lib/postgresql/data/
+
+  app:
+    <<: *base
+    stdin_open: true
+    tty: true
+    command: bundle exec rails server -b 0.0.0.0
+    ports:
+      - "3000:3000"
