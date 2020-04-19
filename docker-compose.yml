@@ -25,7 +25,8 @@ services:
       POSTGRES_PASSWORD: cotocosclub1234
     volumes:
       - palace-postgres-data:/var/lib/postgresql/data/
-
+    ports:
+      - 5432:5432
   app:
     <<: *base
     stdin_open: true
