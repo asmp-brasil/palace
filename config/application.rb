@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
-require 'dotenv' unless ENV['RAILS_ENV'].equal? 'production'
+def production?
+  ENV['RAILS_ENV'].equal?('production') ||
+    ENV['RAKE_ENV'].equal?('production') ||
+    ENV['RACK_ENV'].equal?('production')
+end
+
+require 'dotenv' unless production?
 
 require_relative 'boot'
 
