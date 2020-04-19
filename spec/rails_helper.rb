@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+# Simplecov
+require 'simplecov'
+SimpleCov.minimum_coverage 80
+SimpleCov.start 'rails' do
+  enable_coverage :branch
+end
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
