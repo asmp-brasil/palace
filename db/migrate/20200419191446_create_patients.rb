@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/AbcSize
+# Create Patient entity migration
 class CreatePatients < ActiveRecord::Migration[6.0]
   def change
     create_table :patients do |t|
@@ -20,3 +25,4 @@ class CreatePatients < ActiveRecord::Migration[6.0]
     end
   end
 end
+# rubocop:enable all
