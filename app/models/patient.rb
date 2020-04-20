@@ -8,6 +8,6 @@ class Patient < ApplicationRecord
   validates :name, :crm, :phone, :email, presence: true
 
   def set_default_status
-    self.status = "pending"
+    self.status = 'pending'
   end
 end
