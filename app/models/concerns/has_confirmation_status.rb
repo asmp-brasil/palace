@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Status enum provider concern
-module HasStatus
+module HasConfirmationStatus
   extend ActiveSupport::Concern
   included do
     enum status: { approved: 'approved', rejected: 'rejected', pending: 'pending' }
