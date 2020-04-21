@@ -34,12 +34,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails'
 
 # rails admin
+gem 'devise', '~> 4.7.1'
 gem 'rails_admin', '~> 2.0.2'
 gem 'rails_admin-i18n', '~> 1.12.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 5.1.1'
   gem 'rspec-rails'
   gem 'rubocop', '~> 0.82.0', require: false
 end
@@ -56,6 +58,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'faker', '~> 2.11.0'
   gem 'selenium-webdriver'
   gem 'simplecov'
   # Easy installation and use of web drivers to run system tests with browsers
