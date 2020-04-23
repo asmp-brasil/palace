@@ -36,6 +36,10 @@ gem 'dotenv-rails'
 # rails admin
 gem 'activeadmin', '~> 2.7.0'
 gem 'devise', '~> 4.7.1'
+gem 'devise-i18n', '~> 1.9.1'
+
+# rails i18n
+gem 'rails-i18n', '~> 6.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

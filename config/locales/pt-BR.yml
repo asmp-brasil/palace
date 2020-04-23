@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:
+    models:
+      patient:
+        one: Paciente
+        other: Pacientes
+      medic:
+        one: Médico
+        other: Médicos
+    attributes:
+      patient:
+        name: Nome
+        sex: Sexo
+        civil_state: Estado Cívil
+        children: Filhos
+        drug_usage: Uso de drogas
+        previous_treatment: Tratamento Prévio
+        cirurgies: Cirurgias
+        comorbidities: Comorbidades
+        profession: Profissão
+        workplace: Local de trabalho
+        crm: CRM
+        status: Estado de Confirmação
+        phone: Número de contato
+        email: Email
+      medic:
+        name: Nome
+        crm: CRM
+        phone: Número de contato
+        email: Email
+
