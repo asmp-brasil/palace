@@ -2,7 +2,9 @@
 
 # ActiveAdmin description for Medic entity
 ActiveAdmin.register Medic do
-  permit_params :name, :profession, :crm, :profession, :email, :phone
+  status_options = Patient.statuses.map { |status| [I18n.t("activerecord.attributes.shared.statuses.#{status[0]}"), status[1]] }
+
+  permit_params :name, :profession, :crm, :profession, :email, :phone, :status
 
   filter :id
   filter :name
@@ -15,13 +17,14 @@ ActiveAdmin.register Medic do
   index do
     selectable_column
     id_column
-    column :id
     column :name
     column :profession
     column :crm
     column :phone
     column :email
-    column :status
+    column :status do |medic|
+      I18n.t("activerecord.attributes.shared.statuses.#{medic.status}")
+    end
     actions
   end
 
@@ -32,7 +35,7 @@ ActiveAdmin.register Medic do
       f.input :crm
       f.input :phone
       f.input :email
-      f.input :status, as: :select, collection: Medic.statuses
+      f.input :status, as: :select, collection: status_options
     end
     f.actions
   end
