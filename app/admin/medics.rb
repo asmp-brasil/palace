@@ -2,7 +2,7 @@
 
 # ActiveAdmin description for Medic entity
 ActiveAdmin.register Medic do
-  status_options = Patient.statuses.map { |status| [I18n.t("activerecord.attributes.shared.statuses.#{status[0]}"), status[1]] }
+  status_options = Patient.statuses.map { |s| [I18n.t("activerecord.attributes.shared.statuses.#{s[0]}"), s[1]] }
 
   permit_params :name, :profession, :crm, :profession, :email, :phone, :status
 
