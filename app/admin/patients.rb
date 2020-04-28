@@ -4,7 +4,7 @@
 ActiveAdmin.register Patient do
   sex_options = %w[Masculino Feminino]
   children_options = 0..10
-  status_options = Patient.statuses.map { |s| [I18n.t("activerecord.attributes.shared.statuses.#{s[0]}"), s[1]] }
+  status_options = EnumHelper.translated_options(Patient.statuses, 'statuses')
 
   permit_params :name, :profession, :sex, :civil_state, :children, :drug_usage, :previous_treatment, :cirurgies,
                 :comorbidities, :profession, :workplace, :crm, :profession, :email, :phone, :status
