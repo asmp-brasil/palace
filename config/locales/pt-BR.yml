@@ -23,9 +23,19 @@ pt-BR:
         status: Estado de Confirmação
         phone: Número de contato
         email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
       medic:
         name: Nome
         crm: CRM
         phone: Número de contato
         email: Email
         profession: Profissão
+        created_at: Criado em
+        updated_at: Atualizado em
+      shared:
+        statuses:
+          approved: Aprovado
+          pending: Pendente
+          rejected: Rejeitado
+
