@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative './helpers/enum_helper'
+
 # ActiveAdmin description for the Patient entity
 ActiveAdmin.register Patient do
   sex_options = %w[Masculino Feminino]
