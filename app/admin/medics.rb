@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative './helpers/enum_helper'
+
 # ActiveAdmin description for Medic entity
 ActiveAdmin.register Medic do
   status_options = EnumHelper.translated_options(Medic.statuses, 'statuses')
