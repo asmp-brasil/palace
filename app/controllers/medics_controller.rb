@@ -9,10 +9,10 @@ class MedicsController < PublicController
 
   def create
     @medic = Medic.new(medic_params)
-
     if @medic.save
       flash[:notice] = 'Cadastro realizado com sucesso!'
-      render action: :new
+      redirect_to new_medic_path
+      return
     end
 
     flash.now[:error] = 'Existem alguns dados com erro no cadastro'

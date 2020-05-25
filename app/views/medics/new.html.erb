@@ -1,5 +1,14 @@
 <section class="container">
     <h3 class="title">Novo médico</h3>
+    <% if flash[:notice] %>
+        <div class="message is-info">
+            <div class="message-body">
+                <p>
+                    <%= flash[:notice] %>
+                </p>
+            </div>
+        </div>
+    <% end  %>
     <% if flash[:error] %>
         <div class="message is-danger">
             <div class="message-body">
@@ -7,5 +16,5 @@
             </div>
         </div>
     <% end %>
-    <%= render 'form' %>
+    <%= render 'form', medic: @medic, url: medics_path %>
 </section>

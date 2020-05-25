@@ -3,10 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Medics', type: :request do
-  describe 'GET /create' do
+  describe 'POST /' do
     it 'returns http success' do
-      post '/medics'
-      expect(response).to have_http_status(:success)
+      post '/medics', params: { medic: build(:medic).as_json }
+      expect(response).to have_http_status(:redirect)
     end
   end
 
