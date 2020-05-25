@@ -1,0 +1,9 @@
+<% unless errors.empty? %>
+<div class="error">
+    <ul>
+    <% errors.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>

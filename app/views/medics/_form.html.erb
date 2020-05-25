@@ -1,0 +1,36 @@
+<%= form_with model: @medic, local: true do |form| %>
+    <div class="fields">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <%= render 'shared/field_errors', errors: field_errors(@medic, :name) %>
+    </div>
+
+    <div class="fields">
+        <%= form.label :profession %>
+        <%= form.text_field :profession %>
+        <%= render 'shared/field_errors', errors: field_errors(@medic, :profession) %>
+    </div>
+
+
+    <div class="fields">
+        <%= form.label :crm %>
+        <%= form.text_field :crm %>
+        <%= render 'shared/field_errors', errors: field_errors(@medic, :crm) %>
+    </div>
+
+    <div class="fields">
+        <%= form.label :phone %>
+        <%= form.telephone_field :phone %>
+        <%= render 'shared/field_errors', errors: field_errors(@medic, :phone) %>
+    </div>
+
+    <div class="fields">
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+        <%= render 'shared/field_errors', errors: field_errors(@medic, :email) %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

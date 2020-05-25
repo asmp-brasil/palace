@@ -1,2 +1,9 @@
-<h1>Medic#new</h1>
-<p>Find me in app/views/medic/new.html.erb</p>
+<section>
+    <h3>Inscrever médicos</h3>
+    <% if flash[:error] %>
+        <p class="error">
+            <%= flash[:error] %>
+        </p>
+    <% end %>
+    <%= render 'form' %>
+</section>
