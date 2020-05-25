@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module ErrorHelper
-  def has_error?(model, field)
-    return model.errors.messages.key? field && !model.errors.messages[field].empty? if model.errors
+  def field_error?(model, field)
+    return (model.errors.messages.key? field) && !model.errors.messages[field].empty? if model.errors
 
     false
   end

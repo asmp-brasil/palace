@@ -2,7 +2,7 @@
     <div class="field">
         <%= form.label :name, class: 'label' %>
         <div class="control">
-            <%= form.text_field :name, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm))  %>
+            <%= form.text_field :name, class: class_name(input: true, 'is-danger': field_error?(@medic, :crm))  %>
         </div>
         <%= render 'shared/field_errors', field: :name, errors: field_errors(@medic, :name) %>
     </div>
@@ -10,7 +10,7 @@
     <div class="field">
         <%= form.label :profession, class: 'label' %>
         <div class="control">
-            <%= form.text_field :profession, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm)) %>
+            <%= form.text_field :profession, class: class_name(input: true, 'is-danger': field_error?(@medic, :crm)) %>
         </div>
         <%= render 'shared/field_errors', field: :profession, errors: field_errors(@medic, :profession) %>
     </div>
@@ -19,14 +19,14 @@
     <div class="field">
         <%= form.label :crm, class: 'label' %>
         <div class="control">
-            <%= form.text_field :crm, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm)) %>
+            <%= form.text_field :crm, class: class_name(input: true, 'is-danger': field_error?(@medic, :crm)) %>
         </div>
         <%= render 'shared/field_errors', field: :crm, errors: field_errors(@medic, :crm) %>
     </div>
     <div class="field">
         <%= form.label :phone, class: 'label' %>
         <div class="control">
-            <%= form.telephone_field :phone, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm)) %>
+            <%= form.telephone_field :phone, class: class_name(input: true, 'is-danger': field_error?(@medic, :crm)) %>
         </div>
         <%= render 'shared/field_errors', field: :phone, errors: field_errors(@medic, :phone) %>
     </div>
@@ -34,7 +34,7 @@
     <div class="field">
         <%= form.label :email, class: 'label' %>
         <div class="control">
-            <%= form.email_field :email, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm))%>
+            <%= form.email_field :email, class: class_name(input: true, 'is-danger': field_error?(@medic, :crm))%>
         </div>
         <%= render 'shared/field_errors', field: :email, errors: field_errors(@medic, :email) %>
     </div>
