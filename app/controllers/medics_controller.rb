@@ -3,8 +3,6 @@
 # TODO: Add i18n on future if needed
 
 class MedicsController < PublicController
-  include ErrorHelper
-
   def new
     @medic = Medic.new
   end

@@ -1,36 +1,47 @@
-<%= form_with model: @medic, local: true do |form| %>
-    <div class="fields">
-        <%= form.label :name %>
-        <%= form.text_field :name %>
-        <%= render 'shared/field_errors', errors: field_errors(@medic, :name) %>
+<%= form_with model: @medic, local: true, class: 'container' do |form| %>
+    <div class="field">
+        <%= form.label :name, class: 'label' %>
+        <div class="control">
+            <%= form.text_field :name, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm))  %>
+        </div>
+        <%= render 'shared/field_errors', field: :name, errors: field_errors(@medic, :name) %>
     </div>
 
-    <div class="fields">
-        <%= form.label :profession %>
-        <%= form.text_field :profession %>
-        <%= render 'shared/field_errors', errors: field_errors(@medic, :profession) %>
+    <div class="field">
+        <%= form.label :profession, class: 'label' %>
+        <div class="control">
+            <%= form.text_field :profession, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm)) %>
+        </div>
+        <%= render 'shared/field_errors', field: :profession, errors: field_errors(@medic, :profession) %>
     </div>
 
 
-    <div class="fields">
-        <%= form.label :crm %>
-        <%= form.text_field :crm %>
-        <%= render 'shared/field_errors', errors: field_errors(@medic, :crm) %>
+    <div class="field">
+        <%= form.label :crm, class: 'label' %>
+        <div class="control">
+            <%= form.text_field :crm, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm)) %>
+        </div>
+        <%= render 'shared/field_errors', field: :crm, errors: field_errors(@medic, :crm) %>
+    </div>
+    <div class="field">
+        <%= form.label :phone, class: 'label' %>
+        <div class="control">
+            <%= form.telephone_field :phone, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm)) %>
+        </div>
+        <%= render 'shared/field_errors', field: :phone, errors: field_errors(@medic, :phone) %>
     </div>
 
-    <div class="fields">
-        <%= form.label :phone %>
-        <%= form.telephone_field :phone %>
-        <%= render 'shared/field_errors', errors: field_errors(@medic, :phone) %>
+    <div class="field">
+        <%= form.label :email, class: 'label' %>
+        <div class="control">
+            <%= form.email_field :email, class: class_name(input: true, 'is-danger': has_error?(@medic, :crm))%>
+        </div>
+        <%= render 'shared/field_errors', field: :email, errors: field_errors(@medic, :email) %>
     </div>
 
-    <div class="fields">
-        <%= form.label :email %>
-        <%= form.email_field :email %>
-        <%= render 'shared/field_errors', errors: field_errors(@medic, :email) %>
-    </div>
-
-    <div class="actions">
-        <%= form.submit %>
+    <div class="field">
+        <div class="control">
+            <%= form.submit class: 'button is-primary' %>
+        </div>
     </div>
 <% end %>

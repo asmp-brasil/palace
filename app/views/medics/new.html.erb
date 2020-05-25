@@ -1,9 +1,11 @@
-<section>
-    <h3>Inscrever médicos</h3>
+<section class="container">
+    <h3 class="title">Novo médico</h3>
     <% if flash[:error] %>
-        <p class="error">
-            <%= flash[:error] %>
-        </p>
+        <div class="message is-danger">
+            <div class="message-body">
+                <p><%= flash[:error] %></p>
+            </div>
+        </div>
     <% end %>
     <%= render 'form' %>
 </section>
