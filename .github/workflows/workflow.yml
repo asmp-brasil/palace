@@ -48,6 +48,9 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
       - name: Install postgres client
         run: sudo apt-get install libpq-dev
       - name: Install bundler
@@ -59,10 +62,20 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+
+      - uses: actions/cache@v1
+        with:
+          path: node_modules/
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
       - name: Install dependencies
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
+      - name: Install node dependencies
+        run: |
+          yarn install
       - name: Create database
         run: |
           bundler exec rails db:create RAILS_ENV=test

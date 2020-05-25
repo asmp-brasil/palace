@@ -1,0 +1,9 @@
+<% unless errors.empty? %>
+<div id="error-<%= field.to_s %>" class="error">
+    <ul class="error-list">
+    <% errors.each do |message| %>
+        <li class="error-item"><%= message %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>

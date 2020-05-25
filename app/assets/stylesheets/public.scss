@@ -1,0 +1,13 @@
+@import "bulma/bulma";
+
+.error-list {
+    margin-top: 0.5rem;
+    padding: 0.2rem;
+    background-color: #feecf0;
+    padding-left: 2rem;
+    list-style: disc;
+
+    .error-item {
+        color: #cc0f35;
+    }
+}

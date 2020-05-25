@@ -1,7 +1,27 @@
 # frozen_string_literal: true
 
-class MedicsController < PublicController
-  def new; end
+# TODO: Add i18n on future if needed
 
-  def create; end
+class MedicsController < PublicController
+  def new
+    @medic = Medic.new
+  end
+
+  def create
+    @medic = Medic.new(medic_params)
+    if @medic.save
+      flash[:notice] = 'Cadastro realizado com sucesso!'
+      redirect_to new_medic_path
+      return
+    end
+
+    flash.now[:error] = 'Existem alguns dados com erro no cadastro'
+    render action: :new
+  end
+
+  private
+
+  def medic_params
+    params.require(:medic).permit(:name, :crm, :phone, :email, :profession)
+  end
 end

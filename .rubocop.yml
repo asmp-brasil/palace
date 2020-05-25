@@ -1880,6 +1880,7 @@ Metrics/BlockLength:
   Exclude:
     - '**/*.gemspec'
     - 'app/admin/**.rb'
+    - 'spec/**/**.rb'
 
 Metrics/BlockNesting:
   Description: 'Avoid excessive block nesting.'
