@@ -2,6 +2,12 @@
 
 require 'rails_helper'
 
+class ModelWithoutError
+  def errors
+    nil
+  end
+end
+
 class ModelError
   def initialize(messages)
     @messages = messages
@@ -33,12 +39,21 @@ RSpec.describe ErrorHelper, type: :helper do
       answer = helper.field_error?(model, :key2)
       expect(answer).to be_falsy
     end
+
+    it 'returns false is there is no error' do
+      answer = helper.field_error?(ModelWithoutError.new, :key)
+      expect(answer).to be_falsy
+    end
   end
 
   context '#field_errors' do
     let(:model) { ModelError.new name: ['can\'t be blank'] }
     it 'returns empty messages if key doesnt exist' do
       expect(helper.field_errors(model, :random)).to be_empty
+    end
+
+    it 'returns empty messages if there is no error' do
+      expect(helper.field_errors(ModelWithoutError.new, :key)).to be_empty
     end
 
     it 'returns messagges if key matches' do

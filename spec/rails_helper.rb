@@ -4,7 +4,7 @@
 require 'simplecov'
 SimpleCov.start 'rails' do
   enable_coverage :branch
-  minimum_coverage line: 44, branch: 100
+  minimum_coverage line: 55, branch: 100
 end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
