@@ -25,12 +25,10 @@
 
         <div id="navbar-menu" class="navbar-menu is-static">
             <div class="navbar-end">
-                <a href="/" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
-                    Home
-                </a>
-                <a href="#" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
-                    Sobre
-                </a>
+                <%= link_to "Home", root_path, remote: true, :class => "navbar-item is-secondary modal-trigger" %>
+                
+                <%= link_to "Sobre", about_path, remote: true, :class => "navbar-item is-secondary modal-trigger" %>
+
                 <a href="/admin/sign_in" class="navbar-item">
                     <span class="button signup-button rounded secondary-btn raised">
                        Área administrativa 

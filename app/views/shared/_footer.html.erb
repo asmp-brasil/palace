@@ -7,10 +7,14 @@
                         <h3>Iniciativa</h3>
                     </div>
                     <ul class="link-list">
-                        <li><a href="#">Sobre</a></li>
+                        <li>
+                            <%= link_to "Sobre", about_path, remote: true %>
+                        </li>
                     </ul>
                     <ul class="link-list">
-                        <li><a href="/admin/sign_in">Área administrativa</a></li>
+                        <li>
+                            <%= link_to "Área administrativa", user_session_path, remote: true %>
+                        </li>
                     </ul>
                 </div>
             </div>
