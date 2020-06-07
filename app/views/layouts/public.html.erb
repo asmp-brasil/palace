@@ -4,10 +4,12 @@
     </head>
     <body>
         <!-- headers, navbar e etc -->
+        <%= render 'shared/navbar' %>
         <section id="body">
             <%= yield %>
         </section>
         <!-- footer e etc -->
+        <%= render 'shared/footer' %>
     </body>
     <%= javascript_include_tag "public" %>
 </html>
