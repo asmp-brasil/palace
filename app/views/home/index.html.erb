@@ -1,2 +1,26 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section class="hero is-fullheight is-default is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-5 is-offset-1 landing-caption">
+                    <h1 class="title is-3 is-bold is-spaced has-text-centered">
+                      ASMP - Atendimento de Saúde Mental em Pandemia
+                    </h1>
+                    <h2 class="subtitle is-5 is-muted has-text-centered">
+                    Somos profissionais da Saúde Mental com o intuito de ajudar outros colegas.
+                    Não estamos na Linha de frente mas estamos na Retaguarda.
+                    </h2>
+                    <div class="buttons">
+                        <%= link_to "Precisa de ajuda?", new_medic_path, remote: true, :class => "button cta is-medium is-offset-1 is-rounded primary-btn raised" %>
+                        <%= link_to "Quer se voluntariar?", new_medic_path, remote: true, :class => "button cta is-medium is-rounded" %>
+                    </div>
+                </div>
+                <div class="column is-5">
+                    <figure class="image is-4by3">
+                        <img src="/images/hands.png" alt="Mãos coloridas, unidas">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
